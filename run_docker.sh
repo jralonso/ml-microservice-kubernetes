@@ -12,4 +12,4 @@ docker image ls
 
 # Step 3: 
 # Run flask app
-docker run -p 80:80 ml-microserv
+docker run --name ml-mserv -p 8000:80 ml-microserv
