@@ -5,11 +5,13 @@
 
 # Step 1:
 # Create dockerpath
-# dockerpath=<your docker ID/path>
+dockerpath=jralonso/udacity-devops-mlproject
 
 # Step 2:  
 # Authenticate & tag
 echo "Docker ID and Image: $dockerpath"
+docker login --username=jralonso
 
 # Step 3:
 # Push image to a docker repository
+docker push $dockerpath:latest
