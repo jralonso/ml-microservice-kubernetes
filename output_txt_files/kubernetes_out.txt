@@ -1,1 +1,15 @@
-<paste log output from Kubernetes-mediated prediction, here>
+(.devops) juanra@juanraLaptop:~/Documents/training/Udacity DevOps Cloud/4_Containers/project/ml-microservice-kubernetes(master)$ ./run_kubernetes.sh 
+pod/ml-mserv-dev created
+NAME                          READY   STATUS              RESTARTS   AGE
+hello-node-7676b5fb8d-f6njf   1/1     Running             3          2d21h
+ml-mserv-dev                  0/1     ContainerCreating   0          0s
+error: unable to forward port because pod is not running. Current status=Pending
+(.devops) juanra@juanraLaptop:~/Documents/training/Udacity DevOps Cloud/4_Containers/project/ml-microservice-kubernetes(master)$ ./run_kubernetes.sh 
+Error from server (AlreadyExists): pods "ml-mserv-dev" already exists
+NAME                          READY   STATUS    RESTARTS   AGE
+hello-node-7676b5fb8d-f6njf   1/1     Running   3          2d21h
+ml-mserv-dev                  1/1     Running   0          14s
+Forwarding from 127.0.0.1:8000 -> 80
+Forwarding from [::1]:8000 -> 80
+Handling connection for 8000
+

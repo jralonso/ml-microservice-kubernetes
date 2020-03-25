@@ -1,1 +1,129 @@
-<paste log output from Docker prediction, here>
+(.devops) juanra@juanraLaptop:~/Documents/training/Udacity DevOps Cloud/4_Containers/project/ml-microservice-kubernetes(master)$ ./run_docker.sh 
+Sending build context to Docker daemon  1.178MB
+Step 1/6 : FROM python:3.7.3-stretch
+ ---> 34a518642c76
+Step 2/6 : WORKDIR /app
+ ---> Using cache
+ ---> 11e29d2db7d4
+Step 3/6 : COPY . /app/
+ ---> 845d65fcf2a0
+Step 4/6 : RUN pip install --upgrade pip &&    pip install --trusted-host pypi.python.org -r requirements.txt
+ ---> Running in e6723fffc7c8
+Collecting pip
+  Downloading https://files.pythonhosted.org/packages/54/0c/d01aa759fdc501a58f431eb594a17495f15b88da142ce14b5845662c13f3/pip-20.0.2-py2.py3-none-any.whl (1.4MB)
+Installing collected packages: pip
+  Found existing installation: pip 19.1.1
+    Uninstalling pip-19.1.1:
+      Successfully uninstalled pip-19.1.1
+Successfully installed pip-20.0.2
+Collecting Click==7.0
+  Downloading Click-7.0-py2.py3-none-any.whl (81 kB)
+Collecting Flask==1.0.2
+  Downloading Flask-1.0.2-py2.py3-none-any.whl (91 kB)
+Collecting itsdangerous==1.1.0
+  Downloading itsdangerous-1.1.0-py2.py3-none-any.whl (16 kB)
+Collecting Jinja2==2.10.3
+  Downloading Jinja2-2.10.3-py2.py3-none-any.whl (125 kB)
+Collecting MarkupSafe==1.1.1
+  Downloading MarkupSafe-1.1.1-cp37-cp37m-manylinux1_x86_64.whl (27 kB)
+Collecting numpy==1.17.2
+  Downloading numpy-1.17.2-cp37-cp37m-manylinux1_x86_64.whl (20.3 MB)
+Collecting pandas==0.24.2
+  Downloading pandas-0.24.2-cp37-cp37m-manylinux1_x86_64.whl (10.1 MB)
+Collecting python-dateutil==2.8.0
+  Downloading python_dateutil-2.8.0-py2.py3-none-any.whl (226 kB)
+Collecting pytz==2019.3
+  Downloading pytz-2019.3-py2.py3-none-any.whl (509 kB)
+Collecting scikit-learn==0.20.3
+  Downloading scikit_learn-0.20.3-cp37-cp37m-manylinux1_x86_64.whl (5.4 MB)
+Collecting scipy==1.3.1
+  Downloading scipy-1.3.1-cp37-cp37m-manylinux1_x86_64.whl (25.2 MB)
+Collecting six==1.12.0
+  Downloading six-1.12.0-py2.py3-none-any.whl (10 kB)
+Collecting Werkzeug==0.16.0
+  Downloading Werkzeug-0.16.0-py2.py3-none-any.whl (327 kB)
+Collecting pylint
+  Downloading pylint-2.4.4-py3-none-any.whl (302 kB)
+Collecting isort<5,>=4.2.5
+  Downloading isort-4.3.21-py2.py3-none-any.whl (42 kB)
+Collecting astroid<2.4,>=2.3.0
+  Downloading astroid-2.3.3-py3-none-any.whl (205 kB)
+Collecting mccabe<0.7,>=0.6
+  Downloading mccabe-0.6.1-py2.py3-none-any.whl (8.6 kB)
+Collecting wrapt==1.11.*
+  Downloading wrapt-1.11.2.tar.gz (27 kB)
+Collecting lazy-object-proxy==1.4.*
+  Downloading lazy_object_proxy-1.4.3-cp37-cp37m-manylinux1_x86_64.whl (56 kB)
+Collecting typed-ast<1.5,>=1.4.0; implementation_name == "cpython" and python_version < "3.8"
+  Downloading typed_ast-1.4.1-cp37-cp37m-manylinux1_x86_64.whl (737 kB)
+Building wheels for collected packages: wrapt
+  Building wheel for wrapt (setup.py): started
+  Building wheel for wrapt (setup.py): finished with status 'done'
+  Created wheel for wrapt: filename=wrapt-1.11.2-cp37-cp37m-linux_x86_64.whl size=71300 sha256=edc4907d87b7858a1eedeb13e388e25085ca2d6bedf8c201a4618b2c3a73e81c
+  Stored in directory: /root/.cache/pip/wheels/23/5f/62/304b411f20be41821465a82bc98baabc5e68c3cdd1eb99db71
+Successfully built wrapt
+Installing collected packages: Click, Werkzeug, MarkupSafe, Jinja2, itsdangerous, Flask, numpy, six, python-dateutil, pytz, pandas, scipy, scikit-learn, isort, wrapt, lazy-object-proxy, typed-ast, astroid, mccabe, pylint
+Successfully installed Click-7.0 Flask-1.0.2 Jinja2-2.10.3 MarkupSafe-1.1.1 Werkzeug-0.16.0 astroid-2.3.3 isort-4.3.21 itsdangerous-1.1.0 lazy-object-proxy-1.4.3 mccabe-0.6.1 numpy-1.17.2 pandas-0.24.2 pylint-2.4.4 python-dateutil-2.8.0 pytz-2019.3 scikit-learn-0.20.3 scipy-1.3.1 six-1.12.0 typed-ast-1.4.1 wrapt-1.11.2
+Removing intermediate container e6723fffc7c8
+ ---> e52adb6dc77b
+Step 5/6 : EXPOSE 80
+ ---> Running in 7309d73453e6
+Removing intermediate container 7309d73453e6
+ ---> 9ba883c3a3cf
+Step 6/6 : CMD [ "python", "app.py" ]
+ ---> Running in 6c9371a410e6
+Removing intermediate container 6c9371a410e6
+ ---> 0643cc91212f
+Successfully built 0643cc91212f
+Successfully tagged ml-microserv:latest
+REPOSITORY                                                   TAG                 IMAGE ID            CREATED             SIZE
+ml-microserv                                                 latest              0643cc91212f        1 second ago        1.25GB
+<none>                                                       <none>              8773bd04fb8b        3 minutes ago       1.25GB
+<none>                                                       <none>              60c6a2423c50        15 minutes ago      1.25GB
+jralonso/udacity-devops-mlproject                            latest              99e7344dc656        43 hours ago        1.24GB
+<none>                                                       <none>              c672866f776a        44 hours ago        1.24GB
+mlms-latest                                                  latest              2f0d4e2c2594        44 hours ago        1.24GB
+<none>                                                       <none>              85efaa4a9b42        3 days ago          660MB
+932641825763.dkr.ecr.us-west-2.amazonaws.com/hello-in-node   latest              4beaa9741826        3 days ago          660MB
+932641825763.dkr.ecr.us-west-2.amazonaws.com/hellow          node-latest         4beaa9741826        3 days ago          660MB
+hello-in-node                                                latest              4beaa9741826        3 days ago          660MB
+demolocal                                                    latest              dada50e3d59d        6 days ago          1.25GB
+<none>                                                       <none>              beae1cbf0c84        6 days ago          1.25GB
+circleci/picard                                              latest              de3eede0f829        7 days ago          115MB
+hadolint/hadolint                                            latest              f0166f77f15c        3 weeks ago         8.91MB
+jra                                                          dockerfile2         8ff4655a495a        4 weeks ago         2.5GB
+<none>                                                       <none>              27e67e800fa5        4 weeks ago         177MB
+<none>                                                       <none>              6cfea8d80e62        4 weeks ago         177MB
+jra                                                          dockerfile          7a00bc13aa60        4 weeks ago         177MB
+ubuntu                                                       18.04               72300a873c2c        4 weeks ago         64.2MB
+tomcat                                                       latest              b56d8850aed5        6 weeks ago         529MB
+atlassian/jira-software                                      latest              25dfb1c40ba3        6 months ago        634MB
+centos-node12                                                latest              bd57b9f3293f        9 months ago        646MB
+bin.private.zooplus.net/base/centos7                         latest              62a79599ee8f        9 months ago        513MB
+python                                                       3.7.3-stretch       34a518642c76        9 months ago        929MB
+nginx                                                        latest              719cd2e3ed04        9 months ago        109MB
+ubuntu                                                       latest              7698f282e524        10 months ago       69.9MB
+hello-world                                                  latest              fce289e99eb9        14 months ago       1.84kB
+node                                                         6.14.2              00165cd5d0c0        21 months ago       660MB
+openjdk                                                      8u151-jre           e5a2552b56f9        2 years ago         538MB
+circleci/python                                              3.6.1               96aceba70661        2 years ago         896MB
+gpmidi/centos-6.5                                            latest              415f1f305a8f        5 years ago         354MB
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 207-481-383
+[2020-03-25 17:18:03,588] INFO in app: JSON payload: 
+{'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
+[2020-03-25 17:18:03,594] INFO in app: Inference payload DataFrame: 
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2020-03-25 17:18:03,619] INFO in app: Scaling Payload: 
+    CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2020-03-25 17:18:03,642] INFO in app: Prediction: [20.35373177134412]
+172.17.0.1 - - [25/Mar/2020 17:18:03] "POST /predict HTTP/1.1" 200 -
