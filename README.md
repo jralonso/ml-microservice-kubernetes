@@ -13,22 +13,21 @@ The microservice is build as a python app and the repository includes the necess
 
 This is the file structure of this repository. We will explain in more detail each one of this files in the next sections.
 
-├── app.py
-├── Dockerfile
-├── Makefile
-├── make_prediction.sh
-├── model_data
-│   ├── boston_housing_prediction.joblib
-│   └── housing.csv
-├── output_txt_files
-│   ├── docker_out.txt
-│   └── kubernetes_out.txt
-├── README.md
-├── requirements.txt
-├── run_docker.sh
-├── run_kubernetes.sh
-└── upload_docker.sh
-
+├── app.py  
+├── Dockerfile  
+├── Makefile  
+├── make_prediction.sh  
+├── model_data  
+│   ├── boston_housing_prediction.joblib  
+│   └── housing.csv  
+├── output_txt_files  
+│   ├── docker_out.txt  
+│   └── kubernetes_out.txt  
+├── README.md  
+├── requirements.txt  
+├── run_docker.sh  
+├── run_kubernetes.sh  
+└── upload_docker.sh  
 
 ### The app
 
