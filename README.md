@@ -43,7 +43,7 @@ The repository also provides some auxiliary files to deal with repetitive tasks,
 * upload_docker.sh: tags and pushes the container to docker hub
 * run_kubernetes.sh: runs the container in kubernetes and forwards the container port 80 to host port 8000
 
-## Build the app
+## Building and running the app
 
 ### Prerequisites
 
