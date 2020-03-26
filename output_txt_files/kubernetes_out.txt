@@ -1,15 +1,35 @@
-(.devops) juanra@juanraLaptop:~/Documents/training/Udacity DevOps Cloud/4_Containers/project/ml-microservice-kubernetes(master)$ ./run_kubernetes.sh 
-pod/ml-mserv-dev created
-NAME                          READY   STATUS              RESTARTS   AGE
-hello-node-7676b5fb8d-f6njf   1/1     Running             3          2d21h
-ml-mserv-dev                  0/1     ContainerCreating   0          0s
-error: unable to forward port because pod is not running. Current status=Pending
-(.devops) juanra@juanraLaptop:~/Documents/training/Udacity DevOps Cloud/4_Containers/project/ml-microservice-kubernetes(master)$ ./run_kubernetes.sh 
+juanra@juanraLaptop:~/Documents/training/Udacity DevOps Cloud/4_Containers/project/ml-microservice-kubernetes(master)$ ./run_kubernetes.sh 
 Error from server (AlreadyExists): pods "ml-mserv-dev" already exists
-NAME                          READY   STATUS    RESTARTS   AGE
-hello-node-7676b5fb8d-f6njf   1/1     Running   3          2d21h
-ml-mserv-dev                  1/1     Running   0          14s
+NAME           READY   STATUS              RESTARTS   AGE
+ml-mserv-dev   0/1     ContainerCreating   0          6s
+error: unable to forward port because pod is not running. Current status=Pending
+juanra@juanraLaptop:~/Documents/training/Udacity DevOps Cloud/4_Containers/project/ml-microservice-kubernetes(master)$ ./run_kubernetes.sh 
+Error from server (AlreadyExists): pods "ml-mserv-dev" already exists
+NAME           READY   STATUS    RESTARTS   AGE
+ml-mserv-dev   1/1     Running   0          9m42s
 Forwarding from 127.0.0.1:8000 -> 80
 Forwarding from [::1]:8000 -> 80
-Handling connection for 8000
+
+juanra@juanraLaptop:~/Documents/training/Udacity DevOps Cloud/4_Containers/project/ml-microservice-kubernetes(master)$ kubectl logs --follow ml-mserv-dev 
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 231-779-307
+
+[2020-03-26 11:52:26,419] INFO in app: JSON payload: 
+{'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
+[2020-03-26 11:52:26,425] INFO in app: Inference payload DataFrame: 
+   CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2020-03-26 11:52:26,440] INFO in app: Scaling Payload: 
+    CHAS     RM    TAX  PTRATIO      B  LSTAT
+0     0  6.575  296.0     15.3  396.9   4.98
+[2020-03-26 11:52:26,468] INFO in app: Prediction: [20.35373177134412]
+127.0.0.1 - - [26/Mar/2020 11:52:26] "POST /predict HTTP/1.1" 200 -
+
 
