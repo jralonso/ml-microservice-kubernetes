@@ -40,7 +40,10 @@ The Dockerfile to build the container is provided, but you can also download the
 
 The repository also provides some auxiliary files to deal with repetitive tasks, these files can be used as a template for some other apps:
 * run_docker.sh: builds and runs the docker container with the app
-* upload_docker.sh: tags and pushes the container to docker hub
+* upload_docker.sh: tags and pushes the container to docker hub. This file requires the following arguments to run
+```bash
+  $> upload_docker.sh -u <docker_user> -i <docker_image> -t <docker_tag> -p <docker_path>
+```
 * run_kubernetes.sh: runs the container in kubernetes and forwards the container port 80 to host port 8000
 
 ## Building and running the app
