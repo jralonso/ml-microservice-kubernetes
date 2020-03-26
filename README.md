@@ -13,36 +13,21 @@ The microservice is build as a python app and the repository includes the necess
 
 This is the file structure of this repository. We will explain in more detail each one of this files in the next sections.
 
-├── app.py
-
-├── Dockerfile
-
-├── Makefile
-
-├── make_prediction.sh
-
-├── model_data
-
-│   ├── boston_housing_prediction.joblib
-
-│   └── housing.csv
-
-├── output_txt_files
-
-│   ├── docker_out.txt
-
-│   └── kubernetes_out.txt
-
-├── README.md
-
-├── requirements.txt
-
-├── run_docker.sh
-
-├── run_kubernetes.sh
-
-└── upload_docker.sh
-
+├── app.py  
+├── Dockerfile  
+├── Makefile  
+├── make_prediction.sh  
+├── model_data  
+│   ├── boston_housing_prediction.joblib  
+│   └── housing.csv  
+├── output_txt_files  
+│   ├── docker_out.txt  
+│   └── kubernetes_out.txt  
+├── README.md  
+├── requirements.txt  
+├── run_docker.sh  
+├── run_kubernetes.sh  
+└── upload_docker.sh  
 
 ### The app
 
@@ -58,13 +43,13 @@ The repository also provides some auxiliary files to deal with repetitive tasks,
 * upload_docker.sh: tags and pushes the container to docker hub
 * run_kubernetes.sh: runs the container in kubernetes and forwards the container port 80 to host port 8000
 
-## Build the app
+## Building and running the app
 
 ### Prerequisites
 
 * Install _hadolint_ following the instructions [here](https://github.com/hadolint/hadolint). 
 * Install docker
-* To run kubernetes locally you have to install Minikube which allows you to run a single-node Kubernetes cluster inside a local VM.
+* Install kubernetes. Additionally to run kubernetes locally you have to install Minikube which allows you to run a single-node Kubernetes cluster inside a local VM.
 
 ### Setting up the environment
 
